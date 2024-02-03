@@ -1,0 +1,29 @@
+{% if user.is_authenticated %}
+  <div class="col-auto">
+    <button type="button" class="btn btn-secondary">User: <a
+        href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></button>
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-secondary"><a href="">Logout</a></button>
+  </div>
+
+{% else %}
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary"><a>Login</a></button>
+  </div>
+{% endif %}
+
+<br>
+
+<div class="col-auto">
+  <button type="button" class="btn btn-secondary"><a>Home</a></button>
+</div>
+<div class="col-auto">
+  <button type="button" class="btn btn-secondary"><a>Home</a></button>
+</div>
+<div class="col-auto">
+  <button type="button" class="btn btn-secondary"><a>Home</a></button>
+</div>
+<div class="col-auto">
+  <button type="button" class="btn btn-secondary"><a>Home</a></button>
+</div>
