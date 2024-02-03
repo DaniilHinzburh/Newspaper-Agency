@@ -113,6 +113,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = "catalog.Redactor"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.newspaper_agency.com/en/5.0/howto/static-files/
