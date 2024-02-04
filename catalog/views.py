@@ -20,15 +20,15 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(TopicListView, self).get_context_data(**kwargs)
-        title = self.request.GET.get("model", "")
-        context["search_form"] = TopicSearchForm(initial={"model": title})
+        title = self.request.GET.get("name", "")
+        context["search_form"] = TopicSearchForm(initial={"name": title})
         return context
 
     def get_queryset(self):
         form = TopicSearchForm(self.request.GET)
         if form.is_valid():
             return Topic.objects.filter(
-                model__icontains=form.cleaned_data["name"]
+                name__icontains=form.cleaned_data["name"]
             )
         return Topic.objects.all()
 
@@ -68,7 +68,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
         form = RedactorSearchForm(self.request.GET)
         if form.is_valid():
             return Redactor.objects.filter(
-                model__icontains=form.cleaned_data["username"]
+                username__icontains=form.cleaned_data["username"]
             )
         return Redactor.objects.all()
 
@@ -105,15 +105,15 @@ class NewspaperListView(LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(NewspaperListView, self).get_context_data(**kwargs)
-        title = self.request.GET.get("model", "")
-        context["search_form"] = NewspaperSearchForm(initial={"model": title})
+        title = self.request.GET.get("topics", "")
+        context["search_form"] = NewspaperSearchForm(initial={"topics": title})
         return context
 
     def get_queryset(self):
         form = NewspaperSearchForm(self.request.GET)
         if form.is_valid():
             return Newspaper.objects.filter(
-                model__icontains=form.cleaned_data["topics"]
+                topics__name__icontains=form.cleaned_data["topics"]
             )
         return Newspaper.objects.all()
 
