@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 from catalog.views import index, TopicListView, TopicCreateView, TopicUpdateView, TopicDeleteView, RedactorDeleteView, \
     RedactorUpdateView, RedactorCreateView, RedactorListView, NewspaperListView, NewspaperCreateView, \
-    NewspaperUpdateView, NewspaperDeleteView
+    NewspaperUpdateView, NewspaperDeleteView, RedactorDetailView, NewspaperDetailView
 
 app_name = "catalog"
 urlpatterns = [
@@ -38,6 +38,9 @@ urlpatterns = [
     path("redactors/", RedactorListView.as_view(), name="redactor-list"),
     path("redactors/create/", RedactorCreateView.as_view(), name="redactor-create"),
     path(
+        "redactors/<int:pk>/detail/", RedactorDetailView.as_view(), name="redactor-detail",
+    ),
+    path(
         "redactors/<int:pk>/update/", RedactorUpdateView.as_view(), name="redactor-update",
     ),
     path(
@@ -46,6 +49,9 @@ urlpatterns = [
 
     path("newspapers/", NewspaperListView.as_view(), name="newspaper-list"),
     path("newspapers/create/", NewspaperCreateView.as_view(), name="newspaper-create"),
+    path(
+        "newspapers/<int:pk>/detail/", NewspaperDetailView.as_view(), name="newspaper-detail",
+    ),
     path(
         "newspapers/<int:pk>/update/", NewspaperUpdateView.as_view(), name="newspaper-update",
     ),
