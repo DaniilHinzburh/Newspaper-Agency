@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{#{% load crispy_forms_filters %}#}
+
+{% block content %}
+  <div>
+    <h1>
+      All redactors on our website
+      <a href="{% url 'catalog:redactor-create' %}" class="btn btn-primary link-to-page btn-lg">
+        Create
+      </a>
+    </h1>
+  </div>
+
+  <br>
+  {#  {% include "includes/search_form.html" %}#}
+  {% if redactor_list %}
+    <table class="table">
+      <tr>
+        <th>Username</th>
+        <th>Years of experience</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      {% for redactor in redactor_list %}
+        <tr>
+          <td>
+            <div class="div_for_update_delete">
+              {#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
+              <strong>{{ redactor.username }}</strong>
+            </div>
+          </td>
+          <td>
+            <div class="div_for_update_delete">
+              {{ redactor.years_of_experience }}
+            </div>
+          </td>
+          <td>
+            <div class="div_for_update_delete">
+              <a href="{% url 'catalog:redactor-update' pk=redactor.id %}"
+                 class="btn btn-primary link-to-page">Update</a>
+            </div>
+          </td>
+          <td>
+            <div class="div_for_update_delete">
+              <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}"
+                 class="btn btn-danger link-to-page">Delete</a>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no topics</p>
+  {% endif %}
+
+{% endblock %}
