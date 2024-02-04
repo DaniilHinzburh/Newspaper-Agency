@@ -3,7 +3,7 @@
 {% block content %}
   <h1>
     {{ newspaper.model }}
-    <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}" class="btn btn-secondary link-to-page">
+    <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}" class="btn btn-primary link-to-page">
       Update
     </a>
     <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger link-to-page">
