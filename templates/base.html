@@ -20,7 +20,7 @@
       {% include "includes/sidebar.html" %}
     {% endblock %}
   </div>
- <br>
+  <br>
   <div class="row">
     <div class="col">
       {% block content %}{% endblock %}
@@ -31,9 +31,11 @@
 
 
 
-{#{% block pagination %}#}
-{#  {% include "includes/pagination.html" %}#}
-{#{% endblock %}#}
+{% block pagination %}
+  <div style="display: flex;justify-content: center;">
+    {% include "includes/pagination.html" %}
+  </div>
+{% endblock %}
 
 </body>
 
