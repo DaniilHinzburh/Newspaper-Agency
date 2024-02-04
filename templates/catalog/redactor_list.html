@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{#{% load crispy_forms_filters %}#}
+{% load crispy_forms_filters %}
 
 {% block content %}
   <div>
@@ -12,7 +12,7 @@
   </div>
 
   <br>
-  {#  {% include "includes/search_form.html" %}#}
+    {% include "includes/search_form.html" %}
   {% if redactor_list %}
     <table class="table">
       <tr>
@@ -26,7 +26,7 @@
           <td>
             <div class="div_for_row">
               <a href="{% url 'catalog:redactor-detail' pk=redactor.id %}" style="color: blue">
-                <h5>🛈 </h5>
+                <h5>🛈</h5>
               </a>
               <strong>{{ redactor.username }}</strong>
             </div>
