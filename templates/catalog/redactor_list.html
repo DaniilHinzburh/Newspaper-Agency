@@ -4,7 +4,7 @@
 {% block content %}
   <div>
     <h1>
-      All redactors on our website
+      All redactors on website
       <a href="{% url 'catalog:redactor-create' %}" class="btn btn-primary link-to-page btn-lg">
         Create
       </a>
@@ -50,7 +50,7 @@
       {% endfor %}
     </table>
   {% else %}
-    <p>There are no topics</p>
+    <p>There are no newspaper</p>
   {% endif %}
 
 {% endblock %}
