@@ -24,24 +24,24 @@
       {% for redactor in redactor_list %}
         <tr>
           <td>
-            <div class="div_for_update_delete">
+            <div class="div_for_row">
               {#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
               <strong>{{ redactor.username }}</strong>
             </div>
           </td>
           <td>
-            <div class="div_for_update_delete">
+            <div class="div_for_row">
               {{ redactor.years_of_experience }}
             </div>
           </td>
           <td>
-            <div class="div_for_update_delete">
+            <div class="div_for_row">
               <a href="{% url 'catalog:redactor-update' pk=redactor.id %}"
                  class="btn btn-primary link-to-page">Update</a>
             </div>
           </td>
           <td>
-            <div class="div_for_update_delete">
+            <div class="div_for_row">
               <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}"
                  class="btn btn-danger link-to-page">Delete</a>
             </div>

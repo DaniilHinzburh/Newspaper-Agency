@@ -17,7 +17,7 @@ a:hover {
     color: white;
 }
 
-.div_for_update_delete {
+.div_for_row {
     display: flex;
     justify-content: left;
 }
