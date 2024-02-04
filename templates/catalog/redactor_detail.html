@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ redactor.model }}
+    <a href="{% url 'catalog:redactor-update' pk=redactor.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+    <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+  </h1>
+  <p><strong> Username:</strong> {{ redactor.username }}</p>
+  <p><strong> First name:</strong> {{ redactor.first_name }}</p>
+  <p><strong> Last name:</strong> {{ redactor.last_name }}</p>
+  <h3>Newspapers:</h3>
+  <hr>
+  <ul>
+    {% for newspaper in redactor.newspaper_set.all %}
+      <li>{{ newspaper.title }} ({{ newspaper.pub_date }})</li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock %}
