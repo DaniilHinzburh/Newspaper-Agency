@@ -43,6 +43,11 @@ class RedactorListView(generic.ListView):
     paginate_by = 5
 
 
+class RedactorDetailView(generic.DetailView):
+    model = Redactor
+    queryset = Redactor.objects.all().prefetch_related("newspaper_set")
+
+
 class RedactorCreateView(generic.CreateView):
     model = Redactor
     fields = "__all__"
@@ -62,12 +67,15 @@ class RedactorDeleteView(generic.DeleteView):
     template_name = "catalog/redactor_delete_form.html"
 
 
-
 class NewspaperListView(generic.ListView):
     model = Newspaper
     context_object_name = "newspaper_list"
     template_name = "catalog/newspaper_list.html"
     paginate_by = 5
+
+
+class NewspaperDetailView(generic.DetailView):
+    model = Newspaper
 
 
 class NewspaperCreateView(generic.CreateView):
