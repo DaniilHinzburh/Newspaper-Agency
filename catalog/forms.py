@@ -26,3 +26,34 @@ class RedactorCreationForm(UserCreationForm):
         )
 
 
+class RedactorSearchForm(forms.Form):
+    username = forms.CharField(
+        label="",
+        max_length=255,
+        required=False,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by username"}
+        )
+    )
+
+
+class NewspaperSearchForm(forms.Form):
+    topics = forms.CharField(
+        label="",
+        max_length=255,
+        required=False,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by topic"}
+        )
+    )
+
+
+class TopicSearchForm(forms.Form):
+    name = forms.CharField(
+        label="",
+        max_length=255,
+        required=False,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by name"}
+        )
+    )

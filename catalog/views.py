@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import NewspaperForm, RedactorCreationForm
+from .forms import NewspaperForm, RedactorCreationForm, TopicSearchForm, RedactorSearchForm, NewspaperSearchForm
 from .models import Redactor, Topic, Newspaper
 
 
@@ -17,6 +17,20 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "topic_list"
     template_name = "catalog/topic_list.html"
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(TopicListView, self).get_context_data(**kwargs)
+        title = self.request.GET.get("model", "")
+        context["search_form"] = TopicSearchForm(initial={"model": title})
+        return context
+
+    def get_queryset(self):
+        form = TopicSearchForm(self.request.GET)
+        if form.is_valid():
+            return Topic.objects.filter(
+                model__icontains=form.cleaned_data["name"]
+            )
+        return Topic.objects.all()
 
 
 class TopicCreateView(LoginRequiredMixin, generic.CreateView):
@@ -43,6 +57,20 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "redactor_list"
     template_name = "catalog/redactor_list.html"
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(RedactorListView, self).get_context_data(**kwargs)
+        title = self.request.GET.get("model", "")
+        context["search_form"] = RedactorSearchForm(initial={"model": title})
+        return context
+
+    def get_queryset(self):
+        form = RedactorSearchForm(self.request.GET)
+        if form.is_valid():
+            return Redactor.objects.filter(
+                model__icontains=form.cleaned_data["username"]
+            )
+        return Redactor.objects.all()
 
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
@@ -74,6 +102,20 @@ class NewspaperListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "newspaper_list"
     template_name = "catalog/newspaper_list.html"
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(NewspaperListView, self).get_context_data(**kwargs)
+        title = self.request.GET.get("model", "")
+        context["search_form"] = NewspaperSearchForm(initial={"model": title})
+        return context
+
+    def get_queryset(self):
+        form = NewspaperSearchForm(self.request.GET)
+        if form.is_valid():
+            return Newspaper.objects.filter(
+                model__icontains=form.cleaned_data["topics"]
+            )
+        return Newspaper.objects.all()
 
 
 class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
