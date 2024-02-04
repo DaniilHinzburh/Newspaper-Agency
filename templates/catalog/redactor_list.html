@@ -25,7 +25,9 @@
         <tr>
           <td>
             <div class="div_for_row">
-              {#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
+              <a href="{% url 'catalog:redactor-detail' pk=redactor.id %}" style="color: blue">
+                <h5>🛈 </h5>
+              </a>
               <strong>{{ redactor.username }}</strong>
             </div>
           </td>
