@@ -21,14 +21,15 @@ class TopicCreateView(generic.CreateView):
     model = Topic
     fields = "__all__"
     success_url = reverse_lazy("catalog:topic-list")
+    template_name = "catalog/topic_form.html"
 
-
-class TopicUpdateView(generic.UpdateView):
-    model = Topic
-    fields = "__all__"
-    success_url = reverse_lazy("catalog:topic-list")
-
-
-class TopicDeleteView(generic.DeleteView):
-    model = Topic
-    success_url = reverse_lazy("catalog:topic-list")
+#
+# class TopicUpdateView(generic.UpdateView):
+#     model = Topic
+#     fields = "__all__"
+#     success_url = reverse_lazy("catalog:topic-list")
+#
+#
+# class TopicDeleteView(generic.DeleteView):
+#     model = Topic
+#     success_url = reverse_lazy("catalog:topic-list")

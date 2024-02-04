@@ -2,12 +2,12 @@
 {#{% load crispy_forms_filters %}#}
 
 {% block content %}
-  <div style="padding-top: 5px">
+  <div>
     <h1>
       All topics on our website
-      {#    <a href="{% url 'taxi:car-create' %}" class="btn btn-primary link-to-page">#}
-      {#      Create#}
-      {#    </a>#}
+          <a href="{% url 'catalog:topic-create' %}" class="btn btn-primary link-to-page btn-lg">
+            Create
+          </a>
     </h1>
   </div>
 
