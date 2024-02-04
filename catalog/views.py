@@ -34,3 +34,29 @@ class TopicDeleteView(generic.DeleteView):
     model = Topic
     success_url = reverse_lazy("catalog:topic-list")
     template_name = "catalog/topic_delete_form.html"
+
+
+class RedactorListView(generic.ListView):
+    model = Redactor
+    context_object_name = "redactor_list"
+    template_name = "catalog/redactor_list.html"
+    paginate_by = 5
+
+
+class RedactorCreateView(generic.CreateView):
+    model = Redactor
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:redactor-list")
+    template_name = "catalog/redactor_form.html"
+
+
+class RedactorUpdateView(generic.UpdateView):
+    model = Redactor
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:redactor-list")
+
+
+class RedactorDeleteView(generic.DeleteView):
+    model = Redactor
+    success_url = reverse_lazy("catalog:redactor-list")
+    template_name = "catalog/redactor_delete_form.html"
