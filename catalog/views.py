@@ -45,7 +45,7 @@ class RedactorListView(generic.ListView):
 
 class RedactorDetailView(generic.DetailView):
     model = Redactor
-    queryset = Redactor.objects.all().prefetch_related("newspaper_set")
+    queryset = Redactor.objects.all().prefetch_related("newspaper_set__topics")
 
 
 class RedactorCreateView(generic.CreateView):
