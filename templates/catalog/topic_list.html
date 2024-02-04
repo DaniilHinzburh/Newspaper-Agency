@@ -5,24 +5,42 @@
   <div>
     <h1>
       All topics on our website
-          <a href="{% url 'catalog:topic-create' %}" class="btn btn-primary link-to-page btn-lg">
-            Create
-          </a>
+      <a href="{% url 'catalog:topic-create' %}" class="btn btn-primary link-to-page btn-lg">
+        Create
+      </a>
     </h1>
   </div>
 
   <br>
   {#  {% include "includes/search_form.html" %}#}
   {% if topic_list %}
-    <ul class="list-group">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
       {% for topic in topic_list %}
-        <li class="list-group-item">
-          {#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
-          <h5>{{ topic.name }}</h5>
-        </li>
-        <br>
+        <tr>
+          <td>
+            <div class="div_for_update_delete">
+              {#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
+              <strong>{{ topic.name }}</strong>
+            </div>
+          </td>
+          <td>
+            <div class="div_for_update_delete">
+              <a href="{% url 'catalog:topic-update' pk=topic.id %}" class="btn btn-primary link-to-page">Update</a>
+            </div>
+          </td>
+          <td>
+            <div class="div_for_update_delete">
+              <a href="{% url 'catalog:topic-delete' pk=topic.id %}" class="btn btn-danger link-to-page">Delete</a>
+            </div>
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
   {% else %}
     <p>There are no topics</p>
   {% endif %}

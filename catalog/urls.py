@@ -19,11 +19,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from catalog.views import index, TopicListView, TopicCreateView
+from catalog.views import index, TopicListView, TopicCreateView, TopicUpdateView, TopicDeleteView
 
 app_name = "catalog"
 urlpatterns = [
     path("", index, name="index"),
     path("topics/", TopicListView.as_view(), name="topic-list"),
-    path("topics/create/", TopicCreateView.as_view(), name="topic-create")
+    path("topics/create/", TopicCreateView.as_view(), name="topic-create"),
+    path(
+        "topics/<int:pk>/update/", TopicUpdateView.as_view(), name="topic-update",
+    ),
+    path(
+        "topics/<int:pk>/delete/", TopicDeleteView.as_view(), name="topic-delete",
+    ),
 ]
