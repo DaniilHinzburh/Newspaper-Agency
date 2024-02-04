@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .forms import NewspaperForm
 from .models import Redactor, Topic, Newspaper
 
 
@@ -80,7 +82,8 @@ class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
 
 class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
     model = Newspaper
-    fields = "__all__"
+    form_class = NewspaperForm
+
     success_url = reverse_lazy("catalog:newspaper-list")
     template_name = "catalog/newspaper_form.html"
 
