@@ -17,7 +17,13 @@
   <hr>
   <ul>
     {% for newspaper in redactor.newspaper_set.all %}
-      <li>{{ newspaper.title }} ({{ newspaper.pub_date }})</li>
+      <li>
+        <div class="div_for_row">
+          <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" style="color: blue">
+            <h5>🛈</h5>
+          </a>{{ newspaper.title }} ({{ newspaper.pub_date }})
+        </div>
+      </li>
     {% endfor %}
   </ul>
 
