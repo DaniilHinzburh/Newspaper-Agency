@@ -9,7 +9,17 @@ from .models import Redactor, Topic, Newspaper
 
 
 def index(request):
-    return render(request, "catalog/index.html")
+    num_topics = Topic.objects.count()
+    num_redactors = Redactor.objects.count()
+    num_newspaper = Newspaper.objects.count()
+
+    context = {
+        "num_topics": num_topics,
+        "num_redactors": num_redactors,
+        "num_newspaper": num_newspaper,
+    }
+
+    return render(request, "catalog/index.html", context)
 
 
 class TopicListView(LoginRequiredMixin, generic.ListView):
