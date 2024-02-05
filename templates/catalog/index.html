@@ -2,11 +2,16 @@
 
 {% block content %}
   <h1>Welcome to NewsPress!</h1>
- 
-    <p>We lift the lid on current events and make news accessible to everyone. Just facts, fresh opinions and
-      always on
-      time.</p>
-    <p> Subscribe to stay updated!</p>
 
+  <p>We lift the lid on current events and make news accessible to everyone. Just facts, fresh opinions and
+    always on
+    time.</p>
+  <p> Subscribe to stay updated!</p>
+  <br>
+  <ul>
+    <li><strong>Total topics: </strong>{{ num_topics }}</li>
+    <li><strong>Total redactors: </strong>{{ num_topics }}</li>
+    <li><strong>Total newspaper: </strong>{{ num_newspaper }}</li>
+  </ul>
 
 {% endblock %}
