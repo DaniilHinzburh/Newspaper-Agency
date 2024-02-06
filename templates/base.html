@@ -14,29 +14,29 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container_div">
+  <div class="sidebar_div" style="width: 200vh; margin-top: 20px">
     {% block sidebar %}
       {% include "includes/sidebar.html" %}
     {% endblock %}
   </div>
   <br>
-  <div class="row">
-    <div class="col">
-      {% block content %}{% endblock %}
+
+
+  {% block content %}{% endblock %}
+
+
+
+
+
+
+
+  {% block pagination %}
+    <div style="display: flex;justify-content: center;">
+      {% include "includes/pagination.html" %}
     </div>
-  </div>
+  {% endblock %}
 </div>
-
-
-
-
-{% block pagination %}
-  <div style="display: flex;justify-content: center;">
-    {% include "includes/pagination.html" %}
-  </div>
-{% endblock %}
-
 </body>
 
 </html>

@@ -1,17 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Welcome to NewsPress!</h1>
+  <div class="index_text_div">
+    <h3rem><b>Welcome to NewsPress!</b></h3rem>
 
-  <p>We lift the lid on current events and make news accessible to everyone. Just facts, fresh opinions and
-    always on
-    time.</p>
-  <p> Subscribe to stay updated!</p>
+    <p style="color: white">We lift the lid on current events and make news accessible to everyone.</p>
+    <p style="color: white">Just facts, fresh opinions and always on time.</p>
+    <p style="color: white"> Subscribe to stay updated!</p>
+  </div>
   <br>
-  <ul>
-    <li><strong>Total topics: </strong>{{ num_topics }}</li>
-    <li><strong>Total redactors: </strong>{{ num_topics }}</li>
-    <li><strong>Total newspaper: </strong>{{ num_newspaper }}</li>
-  </ul>
+  <div class="custom_div">
+    <div class="cards">
+      <figure class="card">
+
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:topic-list' %}" class="a_black">
+            <b>{{ num_topics }}</b>
+            <p><b>Topics</b></p>
+          </a></figcaption>
+      </figure>
+    </div>
+    <div class="cards">
+      <figure class="card">
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:redactor-list' %}" class="a_black">
+            <b>{{ num_redactors }}</b>
+            <p><b>Redactors</b></p>
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="cards">
+      <figure class="card">
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:newspaper-list' %}" class="a_black">
+            <b>{{ num_newspaper }}</b>
+            <p><b>Newspapers</b></p>
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+
+
+
 
 {% endblock %}

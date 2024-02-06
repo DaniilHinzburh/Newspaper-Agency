@@ -1,5 +1,189 @@
 body {
-    margin-top: 20px;
+    background: linear-gradient(
+            to bottom,
+            hsl(0, 0%, 0%) 0%,
+            hsl(0, 0%, 1.72%) 8.4%,
+            hsl(0, 0%, 4.87%) 16.6%,
+            hsl(0, 0%, 8.94%) 24.7%,
+            hsl(0, 0%, 13.77%) 32.6%,
+            hsl(0, 0%, 19.25%) 40.4%,
+            hsl(0, 0%, 25.3%) 47.9%,
+            hsl(0, 0%, 31.88%) 55.1%,
+            hsl(0, 0%, 38.95%) 62.1%,
+            hsl(0, 0%, 46.48%) 68.7%,
+            hsl(0, 0%, 54.43%) 75%,
+            hsl(0, 0%, 62.8%) 80.9%,
+            hsl(0, 0%, 71.55%) 86.3%,
+            hsl(0, 0%, 80.68%) 91.4%,
+            hsl(0, 0%, 90.17%) 95.9%,
+            hsl(0, 0%, 100%) 100%
+    );
+
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.sidebar_div {
+    border-radius: 35px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 10px 10px 100px #a1a1a1;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+}
+
+.custom_div {
+    border-radius: 35px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 10px 10px 100px #a1a1a1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards {
+    perspective: 500px;
+}
+
+.card {
+    background: none;
+    border: none;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 200px;
+    min-height: 100px;
+    margin: 20px;
+}
+
+.card:hover {
+    transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+}
+
+.card_title {
+    color: black;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: transform 0.5s;
+    font: 700 2rem monospace;
+}
+
+.card:hover .card_title {
+    transform: translateZ(50px);
+}
+
+h3rem {
+    font-size: 3rem;
+}
+
+.index_text_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.username {
+    width: 20vh;
+    text-decoration: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    outline: 0;
+    transition: all .2s ease;
+}
+
+.button_for_menu {
+    width: 12vh;
+    margin-left: 1vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.6rem 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+}
+
+.button_for_menu:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+}
+
+.button_auth {
+    width: 12vh;
+    margin-left: 1vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: orange;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+}
+
+.button_auth:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.text-1 {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.text-2 {
+    font-weight: 600;
 }
 
 .link-to-page {
@@ -7,19 +191,34 @@ body {
     margin: 0 2px 0 2px;
 }
 
-a {
+.a_black {
+    text-decoration: none;
+    color: black;
+}
+
+.a_black:hover {
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+.a_white {
     text-decoration: none;
     color: white;
+}
+
+.a_white:hover {
+    text-decoration: none;
+    color: black;
 }
 
 .div_for_row {
     display: flex;
     justify-content: left;
+}
+
+.div_for_row_center {
+    display: flex;
+    justify-content: center;
 }
 
 .div_newspaper_content {
@@ -28,3 +227,5 @@ a:hover {
     padding: 10px;
 
 }
+
+
