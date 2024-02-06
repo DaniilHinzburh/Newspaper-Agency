@@ -1,23 +1,30 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
+
 
 {% block content %}
-
-
-  <form method="post" action="{% url 'login' %}" class="form">
-    {% csrf_token %}
-    <span class="form__title">Please login</span>
-    <p class="form__content">Please enter your credentials to login.</p>
-    <div class="form__form">
-      {{ form.as_p }}
-      {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-      {% endif %}
-      <br>
-      <button type="submit" value="Login" class="sign-up">Login</button>
+  <div class="div_for_row_center" style="width: 100%">
+    <div class="div_for_row_center" style="width: 100vh;align-items: center">
+      <form method="post" action="{% url 'login' %}" class="form">
+        {% csrf_token %}
+        <span class="form__title">Please login</span>
+        <p class="form__content">Please enter your credentials to login.</p>
+        <div class="form__form">
+          {{ form.as_p }}
+          {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+          {% endif %}
+          <br>
+          <button type="submit" value="Login" class="sign-up">Login</button>
+        </div>
+        <input type="hidden" name="next" value="{{ next }}"/>
+      </form>
     </div>
-    <input type="hidden" name="next" value="{{ next }}"/>
-  </form>
+    <div class="div_login_img" >
+      <img src="/templates/img/chat.png" style="width: 60vh;height: 50vh">
+    </div>
+  </div>
+
+
 
 
 {% endblock %}
