@@ -124,8 +124,8 @@ class NewspaperListView(LoginRequiredMixin, generic.ListView):
         if form.is_valid():
             return Newspaper.objects.filter(
                 topics__name__icontains=form.cleaned_data["topics"]
-            )
-        return Newspaper.objects.all()
+            ).distinct()
+        return Newspaper.objects.all().distinct()
 
 
 class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
