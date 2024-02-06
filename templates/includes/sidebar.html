@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}
   <div class="username"><b>User:</b>{{ user.username }}</div>
-  <a href="{% url 'logout' %}?next={{ request.path }}" class="button_for_menu">Logout</a>
+  <a href="{% url 'logout' %}?next={{ request.path }}" class="button_auth">Logout</a>
 {% else %}
   <a href="{% url 'login' %}?next={{ request.path }}" class="button_auth">Login</a>
 {% endif %}
@@ -23,7 +23,7 @@
 </div>
 
 <div class="div_for_row" style="justify-content: right ;width: 20%">
-  <a href="" class="button_auth">
+  <a href="" class="button_git">
     <b>Github</b>
   </a>
 </div>

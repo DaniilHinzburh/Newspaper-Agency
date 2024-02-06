@@ -27,9 +27,9 @@ body {
 
 .sidebar_div {
     border-radius: 35px;
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    background: linear-gradient(145deg, rgba(240, 240, 240, 0.8), rgba(202, 202, 202, 0.8));
     box-shadow: 10px 10px 100px #a1a1a1;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: left;
 }
@@ -102,7 +102,7 @@ h3rem {
 }
 
 .username {
-    width: 20vh;
+    width: 25vh;
     text-decoration: none;
     background-color: transparent;
     color: rgba(0, 0, 0, 1);
@@ -139,14 +139,10 @@ h3rem {
 }
 
 .button_auth {
-    width: 12vh;
     margin-left: 1vh;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000;
-    border-radius: 9999px;
-    background-color: orange;
     padding: 0.6rem 1rem;
     text-align: center;
     color: rgba(0, 0, 0, 1);
@@ -157,8 +153,29 @@ h3rem {
 
 .button_auth:hover {
     text-decoration: none;
-    background-color: transparent;
+    color: orange;
+}
+
+.button_git {
+    margin-left: 1vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    color: orange;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.button_git:hover {
+    text-decoration: none;
     color: rgba(0, 0, 0, 1);
+    background-color: orange;
 }
 
 .icon {
