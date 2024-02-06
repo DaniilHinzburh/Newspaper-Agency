@@ -3,22 +3,21 @@
 
 {% block content %}
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
 
-<h1>Login</h1>
+  <form method="post" action="{% url 'login' %}" class="form">
+    {% csrf_token %}
+    <span class="form__title">Please login</span>
+    <p class="form__content">Please enter your credentials to login.</p>
+    <div class="form__form">
+      {{ form.as_p }}
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+      <br>
+      <button type="submit" value="Login" class="sign-up">Login</button>
+    </div>
+    <input type="hidden" name="next" value="{{ next }}"/>
+  </form>
 
-{% if next %}
-  <p>Please login to see this page.</p>
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-
-  <input type="submit" value="Login" class="btn btn-primary" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
 
 {% endblock %}
