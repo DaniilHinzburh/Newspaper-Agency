@@ -130,6 +130,7 @@ h3rem {
     outline: 0;
     transition: all .2s ease;
     text-decoration: none;
+    box-shadow: 3px 3px 6px #6e6e6e;
 }
 
 .button_for_menu:hover {
@@ -170,6 +171,7 @@ h3rem {
     border-radius: 9999px;
     color: orange;
     background-color: rgba(0, 0, 0, 1);
+    box-shadow: 3px 3px 6px #6e6e6e;
 }
 
 .button_git:hover {
@@ -305,127 +307,6 @@ h3rem {
     opacity: 0.8;
 }
 
-.div_login_img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 195vh;
-    height: 84vh;
-    margin: 0 5vh 5vh;
-    border-radius: 35px;
-    background: lightblue;
-    background: radial-gradient(
-            circle,
-            rgb(170, 162, 162),
-            #333 30%,
-            rgba(88, 84, 84, 0.226) 0%
-    ),
-    radial-gradient(
-            circle at 40px 40px,
-            rgb(233, 228, 228),
-            #333 30%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 600px 200px,
-            rgb(233, 228, 228),
-            #333 10%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 800px 100px,
-            rgb(233, 228, 228),
-            #333 10%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 700px 500px,
-            rgb(233, 228, 228),
-            #333 2%,
-            rgba(88, 84, 84, 0.123) 0%
-    ),
-    radial-gradient(
-            circle at 200px 400px,
-            rgb(233, 228, 228),
-            #333 1%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 300px 700px,
-            rgb(233, 228, 228),
-            #333 15%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 900px 500px,
-            rgb(233, 228, 228),
-            #333 20%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 650px 400px,
-            rgb(233, 228, 228),
-            #333 10%,
-            rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-            circle at 600px 600px,
-            rgb(233, 228, 228),
-            #333 1%,
-            rgba(88, 84, 84, 0.959) 0%
-    );
-
-}
-
-.button_search {
-    background: linear-gradient(
-            to bottom right,
-            hsla(42.86, 2.98%, 46.08%, 0.81) 0%,
-            hsla(42.86, 2.97%, 46.1%, 0.81) 11.6%,
-            hsla(42.85, 2.95%, 46.28%, 0.81) 22.6%,
-            hsla(42.84, 2.87%, 46.76%, 0.812) 33.1%,
-            hsla(42.83, 2.73%, 47.67%, 0.814) 42.9%,
-            hsla(42.8, 2.52%, 49.15%, 0.817) 52.1%,
-            hsla(42.77, 2.37%, 51.26%, 0.822) 60.7%,
-            hsla(42.73, 2.29%, 54.08%, 0.829) 68.5%,
-            hsla(42.69, 2.2%, 57.61%, 0.839) 75.6%,
-            hsla(42.65, 2.1%, 61.85%, 0.851) 81.8%,
-            hsla(42.62, 2.01%, 66.77%, 0.866) 87.2%,
-            hsla(42.58, 1.91%, 72.32%, 0.885) 91.7%,
-            hsla(42.55, 1.83%, 78.47%, 0.907) 95.3%,
-            hsla(42.53, 1.75%, 85.15%, 0.934) 97.9%,
-            hsla(42.51, 1.67%, 92.35%, 0.964) 99.5%,
-            hsl(0, 0%, 100%) 100%
-    );
-    height: 5vh;
-    width: 7vh;
-    border-radius: 35px;
-    margin-left: 1vh;
-}
-
-.button_search:hover {
-    background: linear-gradient(
-            to bottom right,
-            hsla(42.86, 2.98%, 46.08%, 0.81) 0%,
-            hsla(42.79, 2.43%, 49.85%, 0.819) 1.1%,
-            hsla(42.74, 2.32%, 53.1%, 0.827) 4%,
-            hsla(42.71, 2.24%, 56.03%, 0.835) 8.7%,
-            hsla(42.68, 2.17%, 58.79%, 0.842) 14.7%,
-            hsla(42.66, 2.11%, 61.49%, 0.85) 21.9%,
-            hsla(42.63, 2.05%, 64.23%, 0.858) 30%,
-            hsla(42.61, 2%, 67.09%, 0.867) 38.7%,
-            hsla(42.59, 1.95%, 70.13%, 0.877) 47.8%,
-            hsla(42.58, 1.9%, 73.42%, 0.889) 57%,
-            hsla(42.56, 1.85%, 76.99%, 0.902) 66.1%,
-            hsla(42.54, 1.8%, 80.89%, 0.917) 74.7%,
-            hsla(42.53, 1.75%, 85.12%, 0.934) 82.7%,
-            hsla(42.52, 1.7%, 89.71%, 0.953) 89.7%,
-            hsla(42.5, 1.65%, 94.67%, 0.975) 95.6%,
-            hsl(0, 0%, 100%) 100%
-    );
-
-}
-
 
 .card_profile {
     width: 30vh;
@@ -474,4 +355,26 @@ h3rem {
 .card_profile:hover {
     background-color: rgb(43, 43, 43);
     transition-duration: .5s;
+}
+
+.button_search {
+    width: 12vh;
+    margin-left: 1vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.6rem 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+    box-shadow: 10px 10px 100px #a1a1a1;
+}
+
+.button_search:hover {
+    opacity: 0.8;
 }
