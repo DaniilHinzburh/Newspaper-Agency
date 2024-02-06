@@ -139,7 +139,7 @@ h3rem {
 }
 
 .button_auth {
-    margin-left: 1vh;
+    width: 12vh;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -245,7 +245,7 @@ h3rem {
 
 
 .form {
-    width: 70vh;
+    width: 50vh;
     height: 50vh;
     padding: 0 15px;
     text-align: center;
