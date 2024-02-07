@@ -157,7 +157,7 @@ h3rem {
     color: orange;
 }
 
-.button_orange {
+.button_git {
     margin-left: 1vh;
     display: inline-flex;
     align-items: center;
@@ -174,7 +174,7 @@ h3rem {
     box-shadow: 3px 3px 6px #6e6e6e;
 }
 
-.button_orange:hover {
+.button_git:hover {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
     background-color: orange;
