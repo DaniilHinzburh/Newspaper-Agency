@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div>
-    <h1>
-      All topics on our website
-      <a href="{% url 'catalog:topic-create' %}" class="btn btn-primary link-to-page btn-lg">
-        Create
-      </a>
-    </h1>
-  </div>
 
+  <h1>
+    All topics on our website
+  </h1>
+
+  <a href="{% url 'catalog:topic-create' %}" class="button_create">
+    <b>Create</b>
+  </a>
   <br>
-    {% include "includes/search_form.html" %}
+  {% include "includes/search_form.html" %}
   {% if topic_list %}
     <table class="table">
       <tr>

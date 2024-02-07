@@ -378,3 +378,28 @@ h3rem {
 .button_search:hover {
     opacity: 0.6;
 }
+
+.button_create {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    color: orange;
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 3px 3px 6px #6e6e6e;
+
+    width: 100px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.button_create:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    background-color: orange;
+}
