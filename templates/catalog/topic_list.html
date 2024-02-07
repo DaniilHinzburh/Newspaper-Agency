@@ -1,37 +1,35 @@
-{% extends "base.html" %}
+{% extends "base_list_view.html" %}
+{% block text %}
+  All topics on our website
+{% endblock text %}
 
-{% block content %}
+{% block create_link %}
+  {% url 'catalog:topic-create' %}
+{% endblock create_link %}
 
-  <h1>
-    All topics on our website
-  </h1>
-
-  <a href="{% url 'catalog:topic-create' %}" class="button_create">
-    <b>Create</b>
-  </a>
-  <br>
-  {% include "includes/search_form.html" %}
+  {% block table %}
   {% if topic_list %}
     <table class="table">
       <tr>
-        <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>
+        
+        <th><div class="div_for_row_center"><b>Name</b></div></th>
+        <th><div class="div_for_row_center"><b>Update</b></div></th>
+        <th><div class="div_for_row_center"><b>Delete</b></div></th>
       </tr>
       {% for topic in topic_list %}
         <tr>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <strong>{{ topic.name }}</strong>
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:topic-update' pk=topic.id %}" class="btn btn-primary link-to-page">Update</a>
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:topic-delete' pk=topic.id %}" class="btn btn-danger link-to-page">Delete</a>
             </div>
           </td>
@@ -41,5 +39,4 @@
   {% else %}
     <p>There are no topics</p>
   {% endif %}
-
-{% endblock %}
+  {% endblock table%}
