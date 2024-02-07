@@ -154,7 +154,7 @@ h3rem {
 
 .button_auth:hover {
     text-decoration: none;
-    color: orange;
+    opacity: 0.5;
 }
 
 .button_git {
