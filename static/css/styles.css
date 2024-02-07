@@ -403,3 +403,21 @@ h3rem {
     color: rgba(0, 0, 0, 1);
     background-color: orange;
 }
+
+.num_page {
+    text-decoration: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    width: 12vh;
+    margin-left: 1vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    outline: 0;
+    transition: all .2s ease;
+    box-shadow: 3px 3px 6px #6e6e6e;
+}
