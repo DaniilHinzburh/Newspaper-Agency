@@ -174,7 +174,7 @@ h3rem {
     box-shadow: 3px 3px 6px #6e6e6e;
 }
 
-.button_git:hover {
+.button_orange:hover {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
     background-color: orange;
@@ -363,7 +363,7 @@ h3rem {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
+    border: 2px;
     border-radius: 9999px;
     background-color: rgba(0, 0, 0, 1);
     padding: 0.6rem 1rem;
@@ -372,9 +372,9 @@ h3rem {
     outline: 0;
     transition: all .2s ease;
     text-decoration: none;
-    box-shadow: 10px 10px 100px #a1a1a1;
+    box-shadow: 3px 3px 6px #6e6e6e;
 }
 
 .button_search:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
