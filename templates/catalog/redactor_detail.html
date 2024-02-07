@@ -23,7 +23,7 @@
         {% for newspaper in redactor.newspaper_set.all %}
           <li>
             <div class="div_for_row">
-              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" style="color: blue">
+              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" class="a_black">
                 <h5>🛈</h5>
               </a>{{ newspaper.title }} ({{ newspaper.pub_date }})
             </div>

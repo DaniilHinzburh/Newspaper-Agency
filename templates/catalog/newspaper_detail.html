@@ -18,7 +18,7 @@
       <p><strong>Publish date:</strong> {{ newspaper.pub_date }}</p>
       <div class="div_for_row">
         <p><strong>Publisher: </strong></p>
-        <a href="{% url 'catalog:redactor-detail' pk=newspaper.publisher.id %}" style="color: blue">
+        <a href="{% url 'catalog:redactor-detail' pk=newspaper.publisher.id %}" class="a_black">
           <h5>🛈</h5>
         </a> {{ newspaper.publisher.username }}
       </div>
