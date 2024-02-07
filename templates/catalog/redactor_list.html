@@ -1,29 +1,25 @@
-{% extends "base.html" %}
+{% extends "base_list_view.html" %}
+{% block text %}
+  All redactors on website
+{% endblock text %}
 
-{% block content %}
-  <div>
-    <h1>
-      All redactors on website
-      <a href="{% url 'catalog:redactor-create' %}" class="btn btn-primary link-to-page btn-lg">
-        Create
-      </a>
-    </h1>
-  </div>
+{% block create_link %}
+{% url 'catalog:redactor-create' %}
+{% endblock create_link %}
 
-  <br>
-    {% include "includes/search_form.html" %}
+{% block table %}
   {% if redactor_list %}
     <table class="table">
       <tr>
-        <th>Username</th>
-        <th>Years of experience</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th><div class="div_for_row_center"><b>Username</b></div></th>
+        <th><div class="div_for_row_center"><b>Years of experience</b></div></th>
+        <th><div class="div_for_row_center"><b>Update</b></div></th>
+        <th><div class="div_for_row_center"><b>Delete</b></div></th>
       </tr>
       {% for redactor in redactor_list %}
         <tr>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:redactor-detail' pk=redactor.id %}" style="color: blue">
                 <h5>🛈</h5>
               </a>
@@ -31,20 +27,20 @@
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               {{ redactor.years_of_experience }}
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:redactor-update' pk=redactor.id %}"
-                 class="btn btn-primary link-to-page">Update</a>
+                 class="button_for_menu">Update</a>
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}"
-                 class="btn btn-danger link-to-page">Delete</a>
+                 class="button_for_menu">Delete</a>
             </div>
           </td>
         </tr>
@@ -53,5 +49,22 @@
   {% else %}
     <p>There are no newspaper</p>
   {% endif %}
+{% endblock table %}
 
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

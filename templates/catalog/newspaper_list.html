@@ -1,26 +1,21 @@
-{% extends "base.html" %}
-
-
-{% block content %}
-  <div>
-    <h1>
+{% extends "base_list_view.html" %}
+{% block text %}
       All newspaper on website
-      <a href="{% url 'catalog:newspaper-create' %}" class="btn btn-primary link-to-page btn-lg">
-        Create
-      </a>
-    </h1>
-  </div>
+{% endblock text %}
 
-  <br>
-    {% include "includes/search_form.html" %}
+{% block create_link %}
+{% url 'catalog:newspaper-create' %}
+{% endblock create_link %}
+
+  {% block table %}
   {% if newspaper_list %}
     <table class="table">
       <tr>
-        <th>Title</th>
-        <th>Publication date</th>
-        <th>Publisher</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th><div class="div_for_row_center"><b>Title</b></div></th>
+        <th><div class="div_for_row_center"><b>Publication date</b></div></th>
+        <th><div class="div_for_row_center"><b>Publisher</b></div></th>
+        <th><div class="div_for_row_center"><b>Update</b></div></th>
+        <th><div class="div_for_row_center"><b>Delete</b></div></th>
       </tr>
       {% for newspaper in newspaper_list %}
         <tr>
@@ -33,25 +28,25 @@
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               {{ newspaper.pub_date }}
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               {{ newspaper.publisher }}
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}"
-                 class="btn btn-primary link-to-page">Update</a>
+                 class="button_for_menu">Update</a>
             </div>
           </td>
           <td>
-            <div class="div_for_row">
+            <div class="div_for_row_center">
               <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}"
-                 class="btn btn-danger link-to-page">Delete</a>
+                 class="button_for_menu">Delete</a>
             </div>
           </td>
         </tr>
@@ -61,4 +56,20 @@
     <p>There are no newspaper</p>
   {% endif %}
 
-{% endblock %}
+  {% endblock table%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
