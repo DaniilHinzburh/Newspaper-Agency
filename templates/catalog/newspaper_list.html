@@ -1,21 +1,31 @@
 {% extends "base_list_view.html" %}
 {% block text %}
-      All newspaper on website
+  All newspaper on website
 {% endblock text %}
 
 {% block create_link %}
-{% url 'catalog:newspaper-create' %}
+  {% url 'catalog:newspaper-create' %}
 {% endblock create_link %}
 
-  {% block table %}
+{% block table %}
   {% if newspaper_list %}
     <table class="table">
       <tr>
-        <th><div class="div_for_row_center"><b>Title</b></div></th>
-        <th><div class="div_for_row_center"><b>Publication date</b></div></th>
-        <th><div class="div_for_row_center"><b>Publisher</b></div></th>
-        <th><div class="div_for_row_center"><b>Update</b></div></th>
-        <th><div class="div_for_row_center"><b>Delete</b></div></th>
+        <th>
+          <div class="div_for_row_center"><b>Title</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Publication date</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Publisher</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Update</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Delete</b></div>
+        </th>
       </tr>
       {% for newspaper in newspaper_list %}
         <tr>
@@ -56,7 +66,7 @@
     <p>There are no newspaper</p>
   {% endif %}
 
-  {% endblock table%}
+{% endblock table %}
 
 
 

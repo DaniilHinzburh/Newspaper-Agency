@@ -7,14 +7,20 @@
   {% url 'catalog:topic-create' %}
 {% endblock create_link %}
 
-  {% block table %}
+{% block table %}
   {% if topic_list %}
     <table class="table">
       <tr>
-        
-        <th><div class="div_for_row_center"><b>Name</b></div></th>
-        <th><div class="div_for_row_center"><b>Update</b></div></th>
-        <th><div class="div_for_row_center"><b>Delete</b></div></th>
+
+        <th>
+          <div class="div_for_row_center"><b>Name</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Update</b></div>
+        </th>
+        <th>
+          <div class="div_for_row_center"><b>Delete</b></div>
+        </th>
       </tr>
       {% for topic in topic_list %}
         <tr>
@@ -39,4 +45,4 @@
   {% else %}
     <p>There are no topics</p>
   {% endif %}
-  {% endblock table%}
+{% endblock table %}
