@@ -1,25 +1,20 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views import generic, View
+from django.views import generic
+from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from .forms import NewspaperForm, RedactorCreationForm, TopicSearchForm, RedactorSearchForm, NewspaperSearchForm
 from .models import Redactor, Topic, Newspaper
 
 
-def index(request):
-    num_topics = Topic.objects.count()
-    num_redactors = Redactor.objects.count()
-    num_newspaper = Newspaper.objects.count()
+class IndexView(TemplateView):
+    template_name = "catalog/index.html"
 
-    context = {
-        "num_topics": num_topics,
-        "num_redactors": num_redactors,
-        "num_newspaper": num_newspaper,
-    }
-
-    return render(request, "catalog/index.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["num_topics"] = Topic.objects.count()
+        context["num_redactors"] = Redactor.objects.count()
+        context["num_newspaper"] = Newspaper.objects.count()
+        return context
 
 
 class TopicListView(LoginRequiredMixin, generic.ListView):
