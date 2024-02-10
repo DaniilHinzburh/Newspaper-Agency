@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {% block title %}<title>Newspaper Agency</title>{% endblock %}
   <meta charset="utf-8">
@@ -12,7 +11,6 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
 <div class="container_div">
   <div class="sidebar_div" style="width: 200vh; margin-top: 20px">
@@ -21,16 +19,7 @@
     {% endblock %}
   </div>
   <br>
-
-
   {% block content %}{% endblock %}
-
-
-
-
-
-
-
   {% block pagination %}
     <div style="display: flex;justify-content: center;">
       {% include "includes/pagination.html" %}
@@ -38,5 +27,4 @@
   {% endblock %}
 </div>
 </body>
-
 </html>

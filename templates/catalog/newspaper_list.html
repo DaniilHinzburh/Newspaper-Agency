@@ -2,11 +2,9 @@
 {% block text %}
   All newspaper on website
 {% endblock text %}
-
 {% block create_link %}
   {% url 'catalog:newspaper-create' %}
 {% endblock create_link %}
-
 {% block table %}
   {% if newspaper_list %}
     <table class="table">
@@ -65,21 +63,4 @@
   {% else %}
     <p>There are no newspaper</p>
   {% endif %}
-
 {% endblock table %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

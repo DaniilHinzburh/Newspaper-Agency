@@ -2,11 +2,9 @@
 {% block text %}
   All redactors on website
 {% endblock text %}
-
 {% block create_link %}
   {% url 'catalog:redactor-create' %}
 {% endblock create_link %}
-
 {% block table %}
   {% if redactor_list %}
     <table class="table">
@@ -58,21 +56,3 @@
     <p>There are no newspaper</p>
   {% endif %}
 {% endblock table %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

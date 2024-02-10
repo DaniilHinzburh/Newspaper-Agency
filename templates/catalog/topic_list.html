@@ -2,16 +2,13 @@
 {% block text %}
   All topics on our website
 {% endblock text %}
-
 {% block create_link %}
   {% url 'catalog:topic-create' %}
 {% endblock create_link %}
-
 {% block table %}
   {% if topic_list %}
     <table class="table">
       <tr>
-
         <th>
           <div class="div_for_row_center"><b>Name</b></div>
         </th>
