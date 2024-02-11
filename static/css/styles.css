@@ -137,6 +137,7 @@ h3rem {
     text-decoration: none;
     background-color: transparent;
     color: rgba(0, 0, 0, 1);
+    transition: all 0.3s ease-in-out;
 }
 
 .button_auth {
@@ -155,6 +156,7 @@ h3rem {
 .button_auth:hover {
     text-decoration: none;
     opacity: 0.5;
+    transition: all 0.3s ease-in-out;
 }
 
 .button_git {
@@ -178,6 +180,7 @@ h3rem {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
     background-color: orange;
+    transition: all 0.3s ease-in-out;
 }
 
 .icon {
@@ -377,6 +380,7 @@ h3rem {
 
 .button_search:hover {
     opacity: 0.6;
+    transition: all 0.3s ease-in-out;
 }
 
 .button_create {
@@ -402,6 +406,7 @@ h3rem {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
     background-color: orange;
+    transition: all 0.3s ease-in-out;
 }
 
 .num_page {
