@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -127,9 +128,11 @@ AUTH_USER_MODEL = "catalog.Redactor"
 
 STATIC_URL = "static/"
 
+STATIC_ROOT = "staticfiles/"
+
 STATICFILES_DIRS = (BASE_DIR / "static",)
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.newspaper_agency.com/en/5.0/ref/settings/#default-auto-field
 
