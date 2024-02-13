@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="text_div">
+    <h3rem><b>Welcome to NewsPress!</b></h3rem>
+
+    <p style="color: white">We lift the lid on current events and make news accessible to everyone.</p>
+    <p style="color: white">Just facts, fresh opinions and always on time.</p>
+    <p style="color: white"> Subscribe to stay updated!</p>
+  </div>
+  <br>
+  <div class="custom_div">
+    <div class="cards">
+      <figure class="card">
+
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:topic-list' %}" class="a_black">
+            <b>{{ num_topics }}</b>
+            <p><b>Topics</b></p>
+          </a></figcaption>
+      </figure>
+    </div>
+    <div class="cards">
+      <figure class="card">
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:redactor-list' %}" class="a_black">
+            <b>{{ num_redactors }}</b>
+            <p><b>Redactors</b></p>
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="cards">
+      <figure class="card">
+        <figcaption class="card_title">
+          <a href="{% url 'catalog:newspaper-list' %}" class="a_black">
+            <b>{{ num_newspaper }}</b>
+            <p><b>Newspapers</b></p>
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+{% endblock %}

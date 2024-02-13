@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+  <div class="text_div">
+    <h1>Delete redactor?</h1>
+    <br>
+    <h3>Are you sure you want to delete the redactor?</h3>
+  </div>
+  <form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="button_for_menu" type="submit" value="Delete">
+  </form>
+{% endblock %}

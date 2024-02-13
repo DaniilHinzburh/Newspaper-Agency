@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  {{ newspaper.model }}
+  <div class="custom_div">
+    <div class="container_div">
+      <div class="div_for_row_center">
+        <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}" class="button_for_menu">
+          Update
+        </a>
+        <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}" class="button_for_menu">
+          Delete
+        </a>
+      </div>
+      <br>
+      <p><strong>Title:</strong> {{ newspaper.title }}</p>
+      <p><strong>Publish date:</strong> {{ newspaper.pub_date }}</p>
+      <div class="div_for_row">
+        <p><strong>Publisher: </strong></p>
+        <a href="{% url 'catalog:redactor-detail' pk=newspaper.publisher.id %}" class="a_black">
+          <h5>🛈</h5>
+        </a> {{ newspaper.publisher.username }}
+      </div>
+      <h3>Topics:</h3>
+      <ul>
+        {% for topic in newspaper.topics.all %}
+          <li>{{ topic.name }}</li>
+        {% endfor %}
+      </ul>
+      <br>
+      <div class="div_newspaper_content" style="width: 100vh">
+        {{ newspaper.content }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
