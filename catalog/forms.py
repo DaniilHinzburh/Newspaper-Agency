@@ -14,12 +14,26 @@ class NewspaperForm(forms.ModelForm):
     class Meta:
         model = Newspaper
         fields = "__all__"
+        widgets = {
+            'pub_date': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 
 class RedactorCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Redactor
         fields = UserCreationForm.Meta.fields + (
+            "years_of_experience",
+            "first_name",
+            "last_name",
+            "email"
+        )
+
+
+class RedactorUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Redactor
+        fields = (
             "years_of_experience",
             "first_name",
             "last_name",

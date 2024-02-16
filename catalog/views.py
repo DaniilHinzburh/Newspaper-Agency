@@ -2,7 +2,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import NewspaperForm, RedactorCreationForm, TopicSearchForm, RedactorSearchForm, NewspaperSearchForm
+from .forms import NewspaperForm, RedactorCreationForm, TopicSearchForm, RedactorSearchForm, NewspaperSearchForm, \
+    RedactorUpdateForm
 from .models import Redactor, Topic, Newspaper
 
 
@@ -92,7 +93,7 @@ class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
 
 class RedactorUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Redactor
-    fields = "__all__"
+    form_class = RedactorUpdateForm
     success_url = reverse_lazy("catalog:redactor-list")
 
 
