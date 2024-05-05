@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 {% block content %}
-  <div class="text_div">
-    <h1>Delete newspaper?</h1>
+  <div class="div_center">
+    <h1 class="text_base" style="font-size:36px"><b>Delete newspaper?</b></h1>
     <br>
-    <h3>Are you sure you want to delete the newspaper?</h3>
+    <h3 class="text_base">Are you sure you want to delete the newspaper?</h3>
+    <br>
   </div>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
-    <input class="button_for_menu" type="submit" value="Delete">
+    <input class="button_input" type="submit" value="Delete">
   </form>
 {% endblock %}

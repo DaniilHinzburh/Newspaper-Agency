@@ -1,0 +1,34 @@
+<div class="div_container"
+     style="width: 100%;background-color: rgb(32, 34, 39);border-bottom: 1px solid rgb(53, 56, 64);padding: 1vh 2vh">
+  <div class="div_left" style="width: 50%;">
+    <button class="button_home">
+      <a href="{% url 'catalog:index' %}" class="a_white">
+        <h3>Home</h3>
+      </a>
+    </button>
+
+  </div>
+  <div class="div_right" style="width: 50%;">
+    {% if user.is_authenticated %}
+      <div class="div_el_sidebar"><b class="sidebar_doc_text">User: {{ user.username }}</b></div>
+      <div class="div_el_sidebar">
+        <a href="{% url 'logout' %}?next={{ request.path }}" class="a_white">
+          <b class="sidebar_doc_text">Logout</b>
+        </a>
+      </div>
+    {% else %}
+      <div class="div_el_sidebar">
+        <a href="{% url 'login' %}?next={{ request.path }}"  class="a_white">
+          <b class="sidebar_doc_text">Login</b>
+        </a>
+      </div>
+
+    {% endif %}
+
+    <button class="button_git">
+      <a href="https://github.com/DaniilHinzburh/Newspaper-Agency">
+        <h3>Github</h3>
+      </a>
+    </button>
+  </div>
+</div>

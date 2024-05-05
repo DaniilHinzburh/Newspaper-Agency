@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="custom_div">
+  <div class="text_base">
     <div class="container_div">
       {{ redactor.model }}
-      <div class="div_for_row_center">
-        <a href="{% url 'catalog:redactor-update' pk=redactor.id %}" class="button_for_menu">
-          Update
-        </a>
-        <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}" class="button_for_menu">
-          Delete
-        </a>
+      <div class="div_center" >
+        <button class="button_update">
+          <a href="{% url 'catalog:redactor-update' pk=redactor.id %}">
+            Update
+          </a>
+        </button>
+
+        <button class="button_delete" style="margin-left: 1vh">
+          <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}" >
+            Delete
+          </a>
+        </button>
+
       </div>
       <br>
       <p><strong> Username:</strong> {{ redactor.username }}</p>
@@ -21,9 +27,9 @@
         {% for newspaper in redactor.newspaper_set.all %}
           <li>
             <div class="div_for_row">
-              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" class="a_black">
-                <h5>🛈</h5>
-              </a>{{ newspaper.title }} ({{ newspaper.pub_date }})
+              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" class="a_white">
+                <h5>🛈 {{ newspaper.title }} ({{ newspaper.pub_date }})</h5>
+              </a>
             </div>
           </li>
         {% endfor %}

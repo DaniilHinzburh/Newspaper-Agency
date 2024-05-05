@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 {% block content %}
-  <div class="text_div">
-    <h1>{{ object|yesno:"Update,Create" }} newspaper</h1>
-    <form action="" method="post" novalidate>
-      {% csrf_token %}
-      {{ form|crispy }}
-      <div class="div_for_row_center">
-        <input type="submit" value="Submit" class="button_for_menu">
-      </div>
-    </form>
-    <br>
-  </div>
+  <h1 class="text_base" style="font-size: 36px">{{ object|yesno:"Update,Create" }} newspaper</h1>
+  <form action="" method="post" novalidate class="text_base">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="div_center">
+      <input type="submit" value="Submit" class="button_input">
+    </div>
+  </form>
+  <br>
 {% endblock %}

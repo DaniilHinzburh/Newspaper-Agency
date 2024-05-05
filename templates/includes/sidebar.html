@@ -1,25 +1,11 @@
-{% if user.is_authenticated %}
-  <div class="username"><b>User:</b>{{ user.username }}</div>
-  <a href="{% url 'logout' %}?next={{ request.path }}" class="button_auth">Logout</a>
-{% else %}
-  <a href="{% url 'login' %}?next={{ request.path }}" class="button_auth" style="width: 37vh">Login</a>
-{% endif %}
-<div class="div_for_row_center" style="width: 130vh">
-  <a href="{% url 'catalog:index' %}" class="button_for_menu">
-    Home
+<div class="div_sidebar" >
+  <a href="{% url 'catalog:topic-list' %}" class="a_white">
+    <p class="sidebar_text">Topics ☑️</p>
   </a>
-  <a href="{% url 'catalog:topic-list' %}" class="button_for_menu">
-    Topics
+  <a href="{% url 'catalog:redactor-list' %}" class="a_white">
+    <p class="sidebar_text">Redactors 👤</p>
   </a>
-  <a href="{% url 'catalog:redactor-list' %}" class="button_for_menu">
-    Redactors
-  </a>
-  <a href="{% url 'catalog:newspaper-list' %}" class="button_for_menu">
-    Newspapers
-  </a>
-</div>
-<div class="div_for_row" style="justify-content: right ;width: 20%">
-  <a href="https://github.com/DaniilHinzburh/Newspaper-Agency" class="button_git">
-    <b>Github</b>
+  <a href="{% url 'catalog:newspaper-list' %}" class="a_white">
+    <p class="sidebar_text">Newspapers 📄</p>
   </a>
 </div>

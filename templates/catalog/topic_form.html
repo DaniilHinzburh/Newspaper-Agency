@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 {% block content %}
-  <div class="text_div">
+  <div class="text_base">
     <h1>{{ object|yesno:"Update,Create" }} topic</h1>
     <form action="" method="post" novalidate>
       {% csrf_token %}
       {{ form|crispy }}
-      <div class="div_for_row_center">
-        <input type="submit" value="Submit" class="button_for_menu">
+      <div class="div_center">
+        <input type="submit" value="Submit" class="button_input">
       </div>
     </form>
     <br>

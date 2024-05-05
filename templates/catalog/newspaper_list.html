@@ -7,54 +7,57 @@
 {% endblock create_link %}
 {% block table %}
   {% if newspaper_list %}
-    <table class="table">
+    <table class="table" style="color: rgb(234, 234, 235);font-size: 24px;">
       <tr>
         <th>
-          <div class="div_for_row_center"><b>Title</b></div>
+          <div class="div_center"><b>Title</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Publication date</b></div>
+          <div class="div_center"><b>Publication date</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Publisher</b></div>
+          <div class="div_center"><b>Publisher</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Update</b></div>
+          <div class="div_center"><b>Update</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Delete</b></div>
+          <div class="div_center"><b>Delete</b></div>
         </th>
       </tr>
       {% for newspaper in newspaper_list %}
         <tr>
           <td>
-            <div class="div_for_row">
-              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" class="a_black">
-                <h5>🛈</h5>
+            <div class="div_center">
+              <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}" class="a_white">
+                <h5>🛈 {{ newspaper.title }}</h5>
               </a>
-              <strong>{{ newspaper.title }}</strong>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
+            <div class="div_center">
               {{ newspaper.pub_date }}
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
+            <div class="div_center">
               {{ newspaper.publisher }}
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}"
-                 class="button_for_menu">Update</a>
+            <div class="div_center">
+              <button class="button_update">
+                <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}">
+                  Update</a>
+              </button>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}"
-                 class="button_for_menu">Delete</a>
+            <div class="div_center">
+              <button class="button_delete">
+                <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}">
+                  Delete</a>
+              </button>
             </div>
           </td>
         </tr>

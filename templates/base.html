@@ -12,19 +12,39 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-<div class="container_div">
-  <div class="sidebar_div" style="width: 200vh; margin-top: 20px">
+
+{% block sidebar_dock %}
+  {% include "includes/sidebar_dock.html" %}
+{% endblock %}
+
+<div class="div_container" style="width: 100%; background-color: rgb(25, 26, 31); min-height: 100%">
     {% block sidebar %}
       {% include "includes/sidebar.html" %}
     {% endblock %}
+  <div class="div_container" style="width: 100%; flex-direction: column; align-items: center; padding: 5vh">
+    <div class="div_box">
+      {% block content %}{% endblock %}
+      {% block pagination %}
+        <div style="display: flex;justify-content: center;">
+          {% include "includes/pagination.html" %}
+        </div>
+      {% endblock %}</div>
   </div>
-  <br>
-  {% block content %}{% endblock %}
-  {% block pagination %}
-    <div style="display: flex;justify-content: center;">
-      {% include "includes/pagination.html" %}
-    </div>
-  {% endblock %}
 </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

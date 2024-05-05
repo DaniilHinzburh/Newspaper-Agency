@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="text_div" style="margin-bottom: 20px;margin-top: 50px">
-    <h1>
-      {% block text %}
-      {% endblock text %}
-    </h1>
-  </div>
-  <a href="{% block create_link %}{% endblock create_link %}" class="button_create">
-    <b>Create</b>
-  </a>
+  <h1 class="text_base" style="font-size: 36px">
+    {% block text %}
+
+    {% endblock text %}
+  </h1>
+  <br>
+  <button class="button_base">
+    <a href="{% block create_link %}{% endblock create_link %}">
+      <h1 class="text_base" style="font-size: 24px;color: rgb(25, 26, 31)" ><b>Create</b></h1>
+    </a>
+  </button>
+
   {% include "includes/search_form.html" %}
-  <div class="custom_div" style="width: 100vh; height: 46vh; align-items: flex-start;">
+  <div style="width: 150vh;  align-items: flex-start;">
     {% block table %}
     {% endblock table %}
   </div>

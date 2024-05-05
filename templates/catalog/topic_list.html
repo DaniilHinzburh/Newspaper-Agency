@@ -7,33 +7,37 @@
 {% endblock create_link %}
 {% block table %}
   {% if topic_list %}
-    <table class="table">
+    <table class="table" style="color: rgb(234, 234, 235); font-size: 24px;">
       <tr>
         <th>
-          <div class="div_for_row_center"><b>Name</b></div>
+          <div class="div_center"><b>Name</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Update</b></div>
+          <div class="div_center"><b>Update</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Delete</b></div>
+          <div class="div_center"><b>Delete</b></div>
         </th>
       </tr>
       {% for topic in topic_list %}
         <tr>
           <td>
-            <div class="div_for_row_center">
-              <strong>{{ topic.name }}</strong>
+            <div class="div_center">
+              <h5>{{ topic.name }}</h5>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:topic-update' pk=topic.id %}" class="button_for_menu">Update</a>
+            <div class="div_center">
+              <button class="button_update">
+                <a href="{% url 'catalog:topic-update' pk=topic.id %}">Update</a>
+              </button>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:topic-delete' pk=topic.id %}" class="button_for_menu">Delete</a>
+            <div class="div_center">
+              <button class="button_delete">
+                <a href="{% url 'catalog:topic-delete' pk=topic.id %}">Delete</a>
+              </button>
             </div>
           </td>
         </tr>

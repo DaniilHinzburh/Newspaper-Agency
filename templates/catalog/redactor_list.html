@@ -7,46 +7,47 @@
 {% endblock create_link %}
 {% block table %}
   {% if redactor_list %}
-    <table class="table">
+    <table class="table" style="color: rgb(234, 234, 235);font-size: 24px;">
       <tr>
         <th>
-          <div class="div_for_row_center"><b>Username</b></div>
+          <div class="div_center"><b>Username</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Years of experience</b></div>
+          <div class="div_center"><b>Years of experience</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Update</b></div>
+          <div class="div_center"><b>Update</b></div>
         </th>
         <th>
-          <div class="div_for_row_center"><b>Delete</b></div>
+          <div class="div_center"><b>Delete</b></div>
         </th>
       </tr>
       {% for redactor in redactor_list %}
         <tr>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:redactor-detail' pk=redactor.id %}" class="a_black">
-                <h5>🛈</h5>
+            <div class="div_center">
+              <a href="{% url 'catalog:redactor-detail' pk=redactor.id %}" class="a_white">
+                <h5>🛈 {{ redactor.username }}</h5>
               </a>
-              <strong>{{ redactor.username }}</strong>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
+            <div class="div_center">
               {{ redactor.years_of_experience }}
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:redactor-update' pk=redactor.id %}"
-                 class="button_for_menu">Update</a>
+            <div class="div_center">
+              <button class="button_update">
+              <a href="{% url 'catalog:redactor-update' pk=redactor.id %}">Update</a>
+              </button>
             </div>
           </td>
           <td>
-            <div class="div_for_row_center">
-              <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}"
-                 class="button_for_menu">Delete</a>
+            <div class="div_center">
+              <button class="button_delete">
+              <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}">Delete</a>
+              </button>
             </div>
           </td>
         </tr>

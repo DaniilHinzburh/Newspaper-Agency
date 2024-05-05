@@ -3,15 +3,22 @@
   <ul class="pagination">
     {% if page_obj.has_previous %}
       <li class="page-item">
-        <a href="?{% query_transform request page=page_obj.previous_page_number %}" class=button_for_menu>prev</a>
+        <button class="button_base" style="margin-left: 1vh">
+          <a href="?{% query_transform request page=page_obj.previous_page_number %}" class=button_base><b>prev</b></a>
+        </button>
+
       </li>
     {% endif %}
     <li class="page-item active">
-      <span class="num_page">{{ page_obj.number }} of {{ paginator.num_pages }}</span>
+      <button class="paginate_data" style="margin-left: 1vh">
+        <span class="num_page"><b>{{ page_obj.number }} of {{ paginator.num_pages }}</b></span>
+      </button>
     </li>
     {% if page_obj.has_next %}
       <li class="page-item">
-        <a href="?{% query_transform request page=page_obj.next_page_number %}" class="button_for_menu">next</a>
+        <button class="button_base" style="margin-left: 1vh">
+          <a href="?{% query_transform request page=page_obj.next_page_number %}" class="button_for_menu"><b>next</b></a>
+        </button>
       </li>
     {% endif %}
   </ul>

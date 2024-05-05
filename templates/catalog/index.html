@@ -1,43 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="text_div">
-    <h3rem><b>Welcome to NewsPress!</b></h3rem>
+    <h3 class="text_base" style="text-align: center; font-size: 36px"><b>Welcome to NewsPress!</b></h3>
+    <br>
 
-    <p style="color: white">We lift the lid on current events and make news accessible to everyone.</p>
-    <p style="color: white">Just facts, fresh opinions and always on time.</p>
-    <p style="color: white"> Subscribe to stay updated!</p>
+    <p class="text_base">We lift the lid on current events and make news accessible to everyone.</p>
+    <p class="text_base">Just facts, fresh opinions and always on time.</p>
+    <p class="text_base">Subscribe to stay updated!</p>
   </div>
   <br>
-  <div class="custom_div">
-    <div class="cards">
-      <figure class="card">
+  <div class="div_row" style="width: 100%">
+    <div class="div_card">
+      <a href="{% url 'catalog:topic-list' %}" class="a_white">
+        <b class="text_base">{{ num_topics }}</b>
+        <p class="text_base"><b>Topics</b></p>
+      </a>
+    </div>
+  
+    <div class="div_card">
+      <a href="{% url 'catalog:redactor-list' %}" class="a_white">
+        <b class="text_base">{{ num_redactors }}</b>
+        <p class="text_base"><b>Redactors</b></p>
+      </a>
+    </div>
 
-        <figcaption class="card_title">
-          <a href="{% url 'catalog:topic-list' %}" class="a_black">
-            <b>{{ num_topics }}</b>
-            <p><b>Topics</b></p>
-          </a></figcaption>
-      </figure>
-    </div>
-    <div class="cards">
-      <figure class="card">
-        <figcaption class="card_title">
-          <a href="{% url 'catalog:redactor-list' %}" class="a_black">
-            <b>{{ num_redactors }}</b>
-            <p><b>Redactors</b></p>
-          </a>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="cards">
-      <figure class="card">
-        <figcaption class="card_title">
-          <a href="{% url 'catalog:newspaper-list' %}" class="a_black">
-            <b>{{ num_newspaper }}</b>
-            <p><b>Newspapers</b></p>
-          </a>
-        </figcaption>
-      </figure>
+    <div class="div_card">
+      <a href="{% url 'catalog:newspaper-list' %}" class="a_white">
+        <b class="text_base">{{ num_newspaper }}</b>
+        <p class="text_base"><b>Newspapers</b></p>
+      </a>
     </div>
   </div>
+
 {% endblock %}

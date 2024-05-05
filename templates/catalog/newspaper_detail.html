@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
   {{ newspaper.model }}
-  <div class="custom_div">
+  <div class="text_base">
     <div class="container_div">
-      <div class="div_for_row_center">
-        <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}" class="button_for_menu">
-          Update
-        </a>
-        <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}" class="button_for_menu">
-          Delete
-        </a>
+      <div class="div_center">
+        <button class="button_update">
+          <a href="{% url 'catalog:newspaper-update' pk=newspaper.id %}" >
+            Update
+          </a>
+        </button>
+        <button class="button_delete" style="margin-left: 1vh">
+          <a href="{% url 'catalog:newspaper-delete' pk=newspaper.id %}"  >
+            Delete
+          </a>
+        </button>
       </div>
       <br>
       <p><strong>Title:</strong> {{ newspaper.title }}</p>
       <p><strong>Publish date:</strong> {{ newspaper.pub_date }}</p>
-      <div class="div_for_row">
-        <p><strong>Publisher: </strong></p>
-        <a href="{% url 'catalog:redactor-detail' pk=newspaper.publisher.id %}" class="a_black">
-          <h5>🛈</h5>
-        </a> {{ newspaper.publisher.username }}
+      <div class="div_row">
+        <p style="margin-right: 1vh"><strong>Publisher: </strong></p>
+        <a href="{% url 'catalog:redactor-detail' pk=newspaper.publisher.id %}" class="a_white">
+           🛈 {{ newspaper.publisher.username }}
+        </a>
       </div>
       <h3>Topics:</h3>
       <ul>
@@ -27,7 +31,7 @@
         {% endfor %}
       </ul>
       <br>
-      <div class="div_newspaper_content" style="width: 100vh">
+      <div style="width: 100vh">
         {{ newspaper.content }}
       </div>
     </div>
