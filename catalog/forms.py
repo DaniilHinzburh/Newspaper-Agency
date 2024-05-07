@@ -1,7 +1,5 @@
 from django import forms
-from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.core.exceptions import ValidationError
 from catalog.models import Topic, Redactor, Newspaper
 
 
@@ -15,7 +13,7 @@ class NewspaperForm(forms.ModelForm):
         model = Newspaper
         fields = "__all__"
         widgets = {
-            'pub_date': forms.DateInput(attrs={'type': 'date'}),
+            "pub_date": forms.DateInput(attrs={"type": "date"}),
         }
 
 

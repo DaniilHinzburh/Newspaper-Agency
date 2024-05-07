@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+
+    <h1 class="text_base" style="font-size: 36px">Create account</h1>
+    <form action="" method="post" novalidate class="text_base">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="div_center">
+        <input type="submit" value="Create" class="button_input">
+      </div>
+    </form>
+    <br>
+{% endblock %}

@@ -7,6 +7,17 @@ from .forms import NewspaperForm, RedactorCreationForm, TopicSearchForm, Redacto
 from .models import Redactor, Topic, Newspaper
 
 
+class RegisterView(generic.CreateView):
+    model = Redactor
+    form_class = RedactorCreationForm
+    success_url = reverse_lazy("catalog:after-register")
+    template_name = "registration/register.html"
+
+
+class AfterRegisterView(TemplateView):
+    template_name = "catalog/after_register.html"
+
+
 class IndexView(TemplateView):
     template_name = "catalog/index.html"
 

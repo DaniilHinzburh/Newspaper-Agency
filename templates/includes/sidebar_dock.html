@@ -18,11 +18,15 @@
       </div>
     {% else %}
       <div class="div_el_sidebar">
-        <a href="{% url 'login' %}?next={{ request.path }}"  class="a_white">
+        <a href="{% url 'login' %}?next={{ request.path }}" class="a_white">
           <b class="sidebar_doc_text">Login</b>
         </a>
       </div>
-
+      <div class="div_el_sidebar">
+        <a href="{% url 'register' %}" class="a_white">
+          <b class="sidebar_doc_text">Signup</b>
+        </a>
+      </div>
     {% endif %}
 
     <button class="button_git">

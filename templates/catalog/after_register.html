@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="text_div">
+    <h3 class="text_base" style="text-align: center; font-size: 36px"><b>Welcome to NewsPress!</b></h3>
+    <br>
+
+    <p class="text_base">You are registered, you can log in to your account</p>
+    <div class="div_center">
+      <button class="button_base">
+        <a href="{% url 'login' %}">
+          <h3>Login</h3>
+        </a>
+      </button>
+    </div>
+  </div>
+
+{% endblock %}
